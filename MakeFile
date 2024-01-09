@@ -1,6 +1,7 @@
 NAME	= libftprintf.a
 
 FILES	= ft_printf.c \
+		  ft_printby.c \
 
 all = 
 

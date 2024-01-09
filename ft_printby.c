@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:20:34 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/09 18:42:29 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:14:54 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_printchr(char y)
 	write(1, &y, 1);
 }
 
-void	ft_printstr(char *by)
+void	ft_printstr(const char *by)
 {
 	while(*by)
 	{
