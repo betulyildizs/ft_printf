@@ -1,0 +1,31 @@
+Program adı -> libftprintf.a
+Teslim edilecek dosyalar -> Makefile, *.h, */*.h, *.c, */*.c
+Makefile -> NAME, all, clean, fclean, re
+Harici fonksiyonlar. -> malloc, free, write, va_start, va_arg, va_copy, va_end
+Libft kullanılabilir mi? -> Evet
+Açıklama : Gerçek printf fonksiyonunu taklit eden ft_printf
+fonksiyonunu içeren bir kütüphane yazın
+__________________________________________________________________________________
+libc kütüphanesinde bulunan printf() fonksiyonunu yeniden yazmalısınız.
+ft_printf() fonksiyonunu prototipi aşağıdaki şeklinde olmalıdır:
+int ft_printf(const char *, ...);
+Proje için ereksinimler:
+• Yazacağınız fonksiyon gerçek printf gibi buffer yönetimi yapmamalıdır.
+• Fonksiyonunuz şu dönüşümleri yapmalıdır: cspdiuxX%
+• Fonksiyonunuz gerçek printf() ile karşılaştırılacaktır.
+• Kütüphanenizi oluşturmak için ar komutunu kullanmalısınız. libtool komutu
+kullanımı yasaklanmıştır.
+• libftprintf.a repository’nizin kökünde oluşturulmalıdır.
+__________________________________________________________________________________
+• %c tek bir karakter yazdırır.
+• %s bir karakter dizisi yazdırır.
+• %p Void * pointer argümanını hexadecimal biçiminde yazdırır.
+• %d 10 tabanında decimal sayı yazdırır.
+• %i 10 tabanında integer yazdırır.
+• %u 10 tabanında işaretsiz decimal sayı yazdırır.
+• %x hexadecimal sayıyı (16 tabanında) küçük harfler ile yazdırır.
+• %X hexadecimal sayıyı (16 tabanında) büyük harfler ile yazdırır.
+• %% yüzde işareti yazdırır.
+
+Daha fazlası için : man 3 printf / man 3 stdarg
+__________________________________________________________________________________
