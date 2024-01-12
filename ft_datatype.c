@@ -6,18 +6,15 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:20:47 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/12 19:08:36 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/12 19:45:29 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_datatype(va_list arg, char *by, int len)
+void	ft_datatype(va_list arg, const char *by, size_t i)
 {
-	unsigned int	i;
-
-	i = 1;
-	while (by[i])
+	while (by[i] != '\0')
 	{
 		if (by[i] == 'c' || by[i] == 's' || by[i] == '%')
 			ft_printstr(va_arg(arg, char *));

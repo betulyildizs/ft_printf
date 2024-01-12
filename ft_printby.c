@@ -6,20 +6,11 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:20:34 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/12 19:01:05 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/12 19:28:09 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_printstr(const char *by)
-{
-	while (*by)
-	{
-		write(1, &by, 1);
-		by++;
-	}
-}
 
 void	ft_printhexup(unsigned int by)
 {
