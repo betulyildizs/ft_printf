@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:37:51 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/12 19:45:50 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:28:30 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,22 @@ int	ft_printf(const char *by, ...)
 {
 	va_list	arg;
 	size_t	len;
-	size_t	i;
-	
-	i = 1;
-	len = ft_strlen(by);
+
 	if (!by)
 		return (0);
+	len = ft_strlen(by);
 	va_start(arg, by);
-	ft_datatype(by, len, i);
+	while (*by)
+	{
+		if (*by == '%')
+		{
+			by++;
+			len = ft_datatype(arg, by, len);
+		}
+		else
+			ft_printchr(*by);
+		by++;
+	}
 	va_end(arg);
+	return (len);
 }

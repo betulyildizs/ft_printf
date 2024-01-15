@@ -6,26 +6,13 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:20:34 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/12 19:28:09 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:24:13 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printhexup(unsigned int by)
-{
-	if (by >= 16)
-	{
-		ft_printhex(by / 16);
-		ft_printhex(by % 16);
-	}
-	else if (by < 10)
-		ft_printstr(by + '0');
-	else
-		ft_printstr(by - 10 + 'A');
-}
-
-void	ft_printnbr(int by)
+size_t	ft_printnbr(int by)
 {
 	if (by == -2147483648)
 	{
@@ -33,30 +20,32 @@ void	ft_printnbr(int by)
 	}
 	else if (by < 0)
 	{
-		ft_printstr('-');
-		ft_printstr(by);
+		ft_printchr('-');
+		ft_printchr(by);
 	}
 	else if (by >= 10)
 	{
 		ft_printnbr(by / 10);
-		ft_printstr(by % 10 + '0');
+		ft_printchr(by % 10 + '0');
 	}
 	else
-		ft_printstr(by + '0');
+		ft_printchr(by + '0');
+	return (ft_countdigit(by));
 }
 
-void	ft_printunsigned(unsigned int by)
+size_t	ft_printunsigned(unsigned int by)
 {
 	if (by >= 10)
 	{
 		ft_printnbr(by / 10);
-		ft_printstr(by % 10 + '0');
+		ft_printchr(by % 10 + '0');
 	}
 	else
-		ft_printstr(by + '0');
+		ft_printchr(by + '0');
+	return (ft_countdigit(by));
 }
 
-void	ft_printptr(void *ptr)
+size_t	ft_printptr(void *ptr)
 {
 	char			*str;
 	unsigned int	i;
@@ -65,9 +54,10 @@ void	ft_printptr(void *ptr)
 	ft_strdup(str);
 	i = 0;
 	ft_printstr(str);
+	return (ft_strlen(str));
 }
 
-void	ft_printhex(unsigned int by)
+size_t	ft_printhex(unsigned int by)
 {
 	if (by >= 16)
 	{
@@ -75,7 +65,8 @@ void	ft_printhex(unsigned int by)
 		ft_printhex(by % 16);
 	}
 	else if (by < 10)
-		ft_printstr(by + '0');
+		ft_printchr(by + '0');
 	else
-		ft_printstr(by - 10 + 'a');
+		ft_printchr(by - 10 + 'a');
+	return (ft_countdigit(by));
 }
