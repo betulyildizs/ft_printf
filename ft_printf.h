@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:44:20 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/15 15:21:33 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:24:43 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,17 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-unsigned int	ft_countdigit(unsigned int num);
-int				ft_datatype(va_list arg, const char *by, size_t len);
+unsigned int	ft_countdigit(unsigned int nbr);
+int				ft_datatype(va_list arg, const char *by, size_t len, int i);
+size_t			ft_printhexup(unsigned int by);
 int				ft_printf(const char *by, ...);
 size_t			ft_strlen(const char *by);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 size_t			ft_printunsigned(unsigned int by);
-void			ft_printhexup(unsigned int by);
 size_t			ft_printhex(unsigned int by);
 size_t			ft_printstr(const char *by);
 size_t			ft_printptr(void *by);
-void			ft_printchr(char by);
+void			ft_printchr(int by);
 size_t			ft_printnbr(int by);
-char			*ft_strdup(const char *str);
 
 #endif
