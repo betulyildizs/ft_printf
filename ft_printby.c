@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:20:34 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/15 18:25:31 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:00:51 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,22 +51,46 @@ size_t	ft_printunsigned(unsigned int by)
 size_t	ft_printptr(void *by)
 {
 	unsigned long	nbr;
-	
+
 	nbr = (unsigned long)by;
-    ft_printhex(nbr); 
-    return ft_countdigit(nbr);
+	ft_printhex(nbr, 0);
+	return (ft_strlen((char *)by));
 }
 
-size_t	ft_printhex(unsigned int by)
+size_t	ft_printhex(unsigned long num, int uppercase)
 {
-	if (by >= 16)
+    if (num >= 16)
 	{
-		ft_printhex(by / 16);
-		ft_printhex(by % 16);
+    	ft_printhex(num / 16, uppercase);
 	}
-	else if (by < 10)
-		ft_printchr(by + '0');
+	if (num % 16 < 10)
+	{
+		ft_printchr((num % 16) + '0');
+	}
 	else
-		ft_printchr(by - 10 + 'a');
-	return (ft_countdigit(by));
+	{
+		if (uppercase)
+        	ft_printchr((num % 16) - 10 + 'A');
+        else
+            ft_printchr((num % 16) - 10 + 'a');
+    }
+	return (ft_counthexdig(num));
 }
+
+// ft_printf("%");
+/*The pointer in decimal format: 0x7ffeefbff58c
+The pointer in hexadecimal format: 7ffeefbff58c*/
+/*unsigned int count_digits(unsigned long num)
+{
+    unsigned int count = 0;
+
+    if (num == 0) 
+		return 1; 
+    while (num != 0)
+    {
+        num /= 10;
+        count++;
+    }
+
+    return count;
+}*/

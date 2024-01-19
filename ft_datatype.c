@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:20:47 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/15 18:26:12 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:32:53 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ int	ft_datatype(va_list arg, const char *by, size_t len, int i)
 	else if (by[i] == 'u')
 		len += (ft_printunsigned(va_arg(arg, unsigned int)) - 2);
 	else if (by[i] == 'p')
-		len += (ft_printptr(va_arg(arg, void *)));
-	else if (by[i] == 'x')
-		len += (ft_printhex(va_arg(arg, unsigned int)) - 2);
-	else if (by[i] == 'X')
-		len += (ft_printhexup(va_arg(arg, unsigned int)) - 2);
+		len += (ft_printptr(va_arg(arg, void *)) - 2);
+	else if (by[i] == 'x' || by[i] == 'X')
+		len += (ft_printhex(va_arg(arg, unsigned long), va_arg(arg, int)) - 2);
 	return (len);
 }

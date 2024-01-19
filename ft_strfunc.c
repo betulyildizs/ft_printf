@@ -6,32 +6,23 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:02:44 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/15 18:24:29 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:22:54 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	ft_countdigit(unsigned int nbr)
-{
-    unsigned int c;
-
-	c = 0;
-    if (nbr == 0) 
-		return 1;
-    while (nbr != 0)
-    {
-        nbr /= 10;
-        c++;
-    }
-    return (c);
-}
 
 size_t	ft_printstr(const char *by)
 {
 	unsigned int	i;
 
 	i = 0;
+	if (by == NULL)
+	{
+		ft_printstr("(null)");
+		return (6);
+	}
 	while (by[i] != '\0')
 	{
 		write(1, &by[i], 1);
@@ -45,6 +36,8 @@ size_t	ft_strlen(const char *by)
 	size_t	i;
 
 	i = 0;
+	if (!by)
+		return (2);
 	while (by[i] != '\0')
 	{
 		i++;
@@ -82,5 +75,5 @@ size_t	ft_printhexup(unsigned int by)
 		ft_printchr(by + '0');
 	else
 		ft_printchr(by - 10 + 'A');
-	return (ft_countdigit(by));
+	return (ft_counthexdig(by));
 }

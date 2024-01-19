@@ -3,6 +3,7 @@ FILES	= ft_printf.c \
 		  ft_datatype.c \
 		  ft_printby.c \
 		  ft_strfunc.c \
+		  ft_countlen.c \
 
 CC		= gcc
 CFLAGS  = -Wall -Werror -Wextra
