@@ -6,29 +6,25 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:02:44 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/19 16:22:54 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:25:54 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-size_t	ft_printstr(const char *by)
+int ft_printstr(char *by)
 {
-	unsigned int	i;
+	int i;
 
 	i = 0;
-	if (by == NULL)
-	{
-		ft_printstr("(null)");
-		return (6);
-	}
+	if (!by)
+		return (ft_printstr("(null)"));
 	while (by[i] != '\0')
 	{
-		write(1, &by[i], 1);
+		ft_printchr(by[i]);
 		i++;
 	}
-	return (ft_strlen(by));
+	return (i);
 }
 
 size_t	ft_strlen(const char *by)

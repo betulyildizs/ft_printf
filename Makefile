@@ -6,11 +6,14 @@ FILES	= ft_printf.c \
 		  ft_countlen.c \
 
 CC		= gcc
+
 CFLAGS  = -Wall -Werror -Wextra
+
 OFILES	= $(FILES:.c=.o)
 
-$(NAME): $(OFILES)
-		ar rcs $@ $^
+$(NAME):
+	$(CC) $(CFLAGS) -c $(FILES)
+	ar -r -c $(NAME) $(OFILES)
 
 all: $(NAME)
 

@@ -6,34 +6,61 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:37:51 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/15 18:09:15 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:28:35 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *by, ...)
+
+int	ft_printchr(int format)
+{
+	write(1, &format, 1);
+	return (1);
+}
+
+int	ft_printf(const char *format, ...)
 {
 	va_list			arg;
-	size_t			len;
-	int				i;
+	int				len;
 
-	i = 0;
-	if (!by)
+	if (!format)
 		return (0);
-	len = ft_strlen(by);
-	va_start(arg, by);
-	while (by[i] != '\0')
-	{
-		if (by[i] == '%')
-		{
-			i++;
-			len = ft_datatype(arg, by, len, i);
-		}
-		else
-			ft_printchr(by[i]);
-			i++;
-	}
+	va_start(arg, format);
+	len = ft_index_cont(arg, format);
 	va_end(arg);
 	return (len);
+}
+
+int	ft_index_cont(va_list arg, const char *format)
+{
+	int	i;
+	int	printed;
+
+	printed = 0;
+	i = 0;
+	while (format[i] != '\0')
+	{
+		if (format[i] == '%')
+			printed = ft_ifcond(arg, format, i, printed);
+		else
+			printed += ft_printchr(format[i]);
+		i++;
+	}
+	return (printed);
+}
+
+int	ft_ifcond(va_list arg, const char *format, int i, int printed)
+{
+	if (format[i + 1] == 'd' || format[i + 1] == 'i'
+		|| format[i + 1] == 'u'
+		|| format[i + 1] == 'x' || format[i + 1] == 'X'
+		|| format[i + 1] == 'p' || format[i + 1] == 's'
+		|| format[i + 1] == 'c')
+	{
+		printed += ft_datatype(arg, format, i + 1);
+	}
+	else
+		printed += ft_printchr(format[i]);
+	return (printed);
 }

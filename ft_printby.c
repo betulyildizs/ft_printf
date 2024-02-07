@@ -6,16 +6,11 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:20:34 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/19 17:00:51 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:37:06 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_printchr(int by)
-{
-	write(1, &by, 1);
-}
 
 size_t	ft_printnbr(int by)
 {
@@ -71,26 +66,8 @@ size_t	ft_printhex(unsigned long num, int uppercase)
 	{
 		if (uppercase)
         	ft_printchr((num % 16) - 10 + 'A');
-        else
+		else
             ft_printchr((num % 16) - 10 + 'a');
     }
 	return (ft_counthexdig(num));
 }
-
-// ft_printf("%");
-/*The pointer in decimal format: 0x7ffeefbff58c
-The pointer in hexadecimal format: 7ffeefbff58c*/
-/*unsigned int count_digits(unsigned long num)
-{
-    unsigned int count = 0;
-
-    if (num == 0) 
-		return 1; 
-    while (num != 0)
-    {
-        num /= 10;
-        count++;
-    }
-
-    return count;
-}*/

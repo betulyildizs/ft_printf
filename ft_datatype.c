@@ -6,33 +6,30 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:20:47 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/19 16:32:53 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/02/07 19:36:54 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_datatype(va_list arg, const char *by, size_t len, int i)
+int	ft_datatype(va_list arg, const char *format, int j)
 {
-	if (by[i] == 'c' || by[i] == '%')
-	{
-		if (by[i] == '%')
-		{
-			ft_printchr('%');
-		}
-		else
-			ft_printchr(va_arg(arg, int));
-		len--;
-	}
-	else if (by[i] == 's')
-		len += (ft_printstr(va_arg(arg, const char *)) - 2);
-	else if (by[i] == 'd' || by[i] == 'i')
-		len += (ft_printnbr(va_arg(arg, int)) - 2);
-	else if (by[i] == 'u')
-		len += (ft_printunsigned(va_arg(arg, unsigned int)) - 2);
-	else if (by[i] == 'p')
-		len += (ft_printptr(va_arg(arg, void *)) - 2);
-	else if (by[i] == 'x' || by[i] == 'X')
-		len += (ft_printhex(va_arg(arg, unsigned long), va_arg(arg, int)) - 2);
+	int	len;
+
+	len = 0;
+	if (format[j] == 'c')
+		len = ft_printchr(va_arg(arg, int));
+	if (format[j] == '%')
+		len = ft_printchr('%');
+	else if (format[j] == 's')
+		len = ft_printstr(va_arg(arg, char *));
+	else if (format[j] == 'd' || format[j] == 'i')
+		len = (ft_printnbr(va_arg(arg, int)));
+	else if (format[j] == 'u')
+		len = (ft_printunsigned(va_arg(arg, unsigned int)));
+	else if (format[j] == 'p')
+		len = (ft_printptr(va_arg(arg, void *)));
+	else if (format[j] == 'x' || format[j] == 'X')
+		len = (ft_printhex(va_arg(arg, unsigned long), va_arg(arg, int)));
 	return (len);
 }
