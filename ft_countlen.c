@@ -32,15 +32,15 @@ unsigned int	ft_countdigit(int nbr)
 	return (c);
 }
 
-int	ft_hexlen(unsigned	int num)
+int	ft_hexlen(unsigned	int nbr)
 {
 	int	len;
 
 	len = 0;
-	while (num != 0)
+	while (nbr != 0)
 	{
 		len++;
-		num = num / 16;
+		nbr = nbr / 16;
 	}
 	return (len);
 }
