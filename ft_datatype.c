@@ -30,6 +30,6 @@ int	ft_datatype(va_list arg, const char *format, int j)
 	else if (format[j] == 'p')
 		len = (ft_printptr(va_arg(arg, unsigned long long int)));
 	else if (format[j] == 'x' || format[j] == 'X')
-		len = (ft_printhex(va_arg(arg, unsigned long), va_arg(arg, int)));
+		len = (ft_printhex(va_arg(arg, unsigned long long), va_arg(arg, int)));
 	return (len);
 }
