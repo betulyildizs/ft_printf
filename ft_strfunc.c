@@ -27,7 +27,7 @@ int ft_printstr(char *by)
 	return (i);
 }
 
-size_t	ft_strlen(const char *by)
+int	ft_strlen(const char *by)
 {
 	size_t	i;
 
@@ -41,7 +41,7 @@ size_t	ft_strlen(const char *by)
 	return (i);
 }
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 	size_t			lenght;
