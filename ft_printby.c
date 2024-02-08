@@ -42,32 +42,3 @@ size_t	ft_printunsigned(unsigned int by)
 	ft_printchr(by % 10 + '0');
 	return (ft_countdigit(by));
 }
-
-size_t	ft_printptr(void *by)
-{
-	unsigned long	nbr;
-
-	nbr = (unsigned long)by;
-	ft_printhex(nbr, 0);
-	return (ft_strlen((char *)by));
-}
-
-size_t	ft_printhex(unsigned long num, int uppercase)
-{
-    if (num >= 16)
-	{
-    	ft_printhex(num / 16, uppercase);
-	}
-	if (num % 16 < 10)
-	{
-		ft_printchr((num % 16) + '0');
-	}
-	else
-	{
-		if (uppercase)
-        	ft_printchr((num % 16) - 10 + 'A');
-		else
-            ft_printchr((num % 16) - 10 + 'a');
-    }
-	return (ft_counthexdig(num));
-}
