@@ -33,26 +33,6 @@ size_t	ft_printnbr(int by)
 	return (ft_countdigit(by));
 }
 
-int	ft_printhex(unsigned long num, int uppercase)
-{
-    if (num >= 16)
-	{
-    	ft_printhex(num / 16, uppercase);
-	}
-	if (num % 16 < 10)
-	{
-		ft_printchr((num % 16) + '0');
-	}
-	else
-	{
-		if (uppercase)
-        	ft_printchr((num % 16) - 10 + 'A');
-		else
-            ft_printchr((num % 16) - 10 + 'a');
-    }
-	return (ft_counthexdig(num));
-}
-
 int ft_printunsigned(unsigned int by)
 {
 	if (by == 0)
