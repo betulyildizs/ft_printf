@@ -6,19 +6,24 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 15:15:57 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/01/29 20:00:32 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/02/08 19:35:30 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	ft_countdigit(unsigned int nbr)
+unsigned int	ft_countdigit(int nbr)
 {
 	unsigned int	c;
 
 	c = 0;
 	if (nbr == 0)
 		return (1);
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		c++;
+	}
 	while (nbr != 0)
 	{
 		nbr /= 10;
@@ -27,14 +32,27 @@ unsigned int	ft_countdigit(unsigned int nbr)
 	return (c);
 }
 
-unsigned int	ft_counthexdig(unsigned long num)
+int	ft_hexlen(unsigned	int num)
 {
-	unsigned int	count;
+	int	len;
 
-	count = 0;
+	len = 0;
 	while (num != 0)
 	{
-		num /= 16;
+		len++;
+		num = num / 16;
+	}
+	return (len);
+}
+
+int ft_countuns(unsigned int by)
+{
+	int count;
+
+	count = 0;
+	while (by != 0)
+	{
+		by /= 10;
 		count++;
 	}
 	return (count);

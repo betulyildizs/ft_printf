@@ -6,7 +6,7 @@
 /*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:20:47 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/02/07 19:36:54 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/02/08 19:02:05 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_datatype(va_list arg, const char *format, int j)
 	len = 0;
 	if (format[j] == 'c')
 		len = ft_printchr(va_arg(arg, int));
-	if (format[j] == '%')
+	else if (format[j] == '%')
 		len = ft_printchr('%');
 	else if (format[j] == 's')
 		len = ft_printstr(va_arg(arg, char *));
@@ -28,7 +28,7 @@ int	ft_datatype(va_list arg, const char *format, int j)
 	else if (format[j] == 'u')
 		len = (ft_printunsigned(va_arg(arg, unsigned int)));
 	else if (format[j] == 'p')
-		len = (ft_printptr(va_arg(arg, void *)));
+		len = (ft_printptr(va_arg(arg, unsigned long long int)));
 	else if (format[j] == 'x' || format[j] == 'X')
 		len = (ft_printhex(va_arg(arg, unsigned long), va_arg(arg, int)));
 	return (len);
