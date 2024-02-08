@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-size_t	ft_printnbr(int by)
+int	ft_printnbr(int by)
 {
 	if (by == -2147483648)
 	{
@@ -33,7 +33,7 @@ size_t	ft_printnbr(int by)
 	return (ft_countdigit(by));
 }
 
-size_t	ft_printunsigned(unsigned int by)
+int	ft_printunsigned(unsigned int by)
 {
 	if (by >= 10)
 	{
