@@ -19,7 +19,6 @@
 
 unsigned int	ft_countdigit(int nbr);
 int				ft_datatype(va_list arg, const char *format, int i);
-int				ft_index_cont(va_list arg, const char *format);
 int				ft_printf(const char *format, ...);
 int			ft_strlen(const char *by);
 int			ft_strlcpy(char *dest, const char *src, size_t size);
