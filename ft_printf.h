@@ -34,8 +34,8 @@ int				ft_ptrlen(uintptr_t nbr);
 void			ft_putchar_fd(char c, int fd);
 int				ft_printunsigned(unsigned int by);
 int 			ft_countuns(unsigned int by);
-int				ft_printhex(unsigned int num, const char str);
-void			ft_puthex(unsigned int num, const char str);
-int				ft_hexlen(unsigned	int num);
+int				ft_printhex(unsigned int nbr, const char str);
+void			ft_puthex(unsigned int nbr, const char str);
+int				ft_hexlen(unsigned	int nbr);
 
 #endif
