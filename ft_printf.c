@@ -3,26 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:37:51 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/02/08 17:06:06 by beyildiz         ###   ########.fr       */
+/*   Updated: 2024/02/11 14:52:34 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-int	ft_printchr(int format)
-{
-	write(1, &format, 1);
-	return (1);
-}
-
 int	ft_printf(const char *format, ...)
 {
-	va_list			arg;
-	int				len;
+	va_list	arg;
+	int		len;
 
 	if (!format)
 		return (0);
