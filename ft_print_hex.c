@@ -22,13 +22,13 @@ void	ft_puthex(unsigned int nbr, const char str)
 	else
 	{
 		if (nbr <= 9)
-			ft_putchar_fd((nbr + '0'), 1);
+			ft_printchr(nbr + '0');
 		else
 		{
 			if (str == 'x')
-				ft_putchar_fd((nbr - 10 + 'a'), 1);
+				ft_printchr((nbr - 10) + 'a');
 			if (str == 'X')
-				ft_putchar_fd((nbr - 10 + 'A'), 1);
+				ft_printchr((nbr - 10) + 'A');
 		}
 	}
 }
