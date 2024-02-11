@@ -22,9 +22,9 @@ void	ft_putptr(uintptr_t nbr)
 	else
 	{
 		if (nbr <= 9)
-			ft_printchar(nbr + '0');
+			ft_printchr(nbr + '0');
 		else
-			ft_printchar((nbr - 10) + 'a');
+			ft_printchr((nbr - 10) + 'a');
 	}
 }
 
