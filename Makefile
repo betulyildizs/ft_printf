@@ -15,7 +15,7 @@ OFILES	= $(FILES:.c=.o)
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(FILES)
-	ar -r -c $(NAME) $(OFILES)
+	ar -rc $(NAME) $(OFILES)
 
 all: $(NAME)
 

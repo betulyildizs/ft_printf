@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printfunc.c                                     :+:      :+:    :+:   */
+/*   ft_print_functions.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:20:34 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/02/11 14:53:43 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/18 13:27:59 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	ft_printchr(int c)
 {
@@ -19,9 +18,9 @@ int	ft_printchr(int c)
 	return (1);
 }
 
-int ft_printstr(char *str)
+int	ft_printstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -55,7 +54,7 @@ int	ft_printnbr(int nbr)
 	return (ft_countdigit(nbr));
 }
 
-int ft_printunsigned(unsigned int nbr)
+int	ft_printunsigned(unsigned int nbr)
 {
 	if (nbr == 0)
 	{

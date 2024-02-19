@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calculate_len.c                                 :+:      :+:    :+:   */
+/*   ft_calculate_length.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: beyildiz <beyildiz@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 15:15:57 by beyildiz          #+#    #+#             */
-/*   Updated: 2024/02/11 14:52:17 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/18 13:27:39 by beyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int	ft_countdigit(int nbr)
 	return (c);
 }
 
-int ft_countunsigned(unsigned int nbr)
+int	ft_countunsigned(unsigned int nbr)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (nbr != 0)
